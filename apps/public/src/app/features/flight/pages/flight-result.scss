@@ -1,0 +1,44 @@
+.flight-detail-tab .ant-tabs-card.ant-tabs-top > .ant-tabs-nav .ant-tabs-tab {
+  border-radius: 0px 0px 0 0;
+}
+.flight-detail-tab .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab {
+  border: 0px;
+}
+.flight-detail-tab .ant-tabs-card .ant-tabs-nav-wrap {
+  background-color: var(--primary-color-500);
+}
+.flight-detail-tab
+  .ant-tabs-card.ant-tabs-top
+  > .ant-tabs-nav
+  .ant-tabs-tab
+  + .ant-tabs-tab {
+  margin: 0px;
+}
+
+.flight-detail-tab .ant-tabs-tab .ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: var(--primary-color-500);
+  div {
+    display: block;
+    background-color: var(--primary-color-500);
+  }
+}
+
+.flight-detail-tab .ant-tabs-tab.ant-tabs-tab-active {
+  background: #f3f4f6 !important;
+}
+.flight-detail-tab .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab {
+  color: white;
+  background-color: var(--primary-color-500);
+}
+
+.flight-detail-tab .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab {
+  padding-bottom: 0px;
+}
+
+.flight-detail-tab .ant-tabs-top > .ant-tabs-nav::before {
+  border: 0px;
+}
+.flight-detail-tab .ant-tabs-extra-content {
+  background-color: var(--primary-color-500);
+  border-top-right-radius: 0.5rem;
+}

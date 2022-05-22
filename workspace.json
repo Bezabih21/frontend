@@ -1,0 +1,440 @@
+{
+  "version": 2,
+  "cli": { "defaultCollection": "@nrwl/react" },
+  "defaultProject": "public",
+  "generators": {
+    "@nrwl/react": {
+      "application": { "style": "scss", "linter": "eslint", "babel": true },
+      "component": { "style": "scss" },
+      "library": { "style": "scss", "linter": "eslint" }
+    }
+  },
+  "projects": {
+    "public": {
+      "root": "apps/public",
+      "sourceRoot": "apps/public/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": [],
+          "options": {
+            "commands": [
+              "npm run tailwind:public:prod",
+              "npx nx run public:postBuild --configuration=production"
+            ],
+            "parallel": false,
+            "maxWorkers": 2,
+            "memoryLimit": 512
+          }
+        },
+        "postBuild": {
+          "executor": "@nrwl/web:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "fileReplacements": [
+              {
+                "replace": "apps/public/src/styles/tailwind.css",
+                "with": "apps/public/src/styles/tailwind.dev.css"
+              }
+            ],
+            "outputPath": "dist/apps/public",
+            "index": "apps/public/src/index.html",
+            "main": "apps/public/src/main.tsx",
+            "polyfills": "apps/public/src/polyfills.ts",
+            "tsConfig": "apps/public/tsconfig.app.json",
+            "assets": ["apps/public/src/favicon.ico", "apps/public/src/assets"],
+            "styles": ["apps/public/src/styles.scss", "styles/global.scss"],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/webpack"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/public/src/environments/environment.ts",
+                  "with": "apps/public/src/environments/environment.prod.ts"
+                },
+                {
+                  "replace": "apps/public/src/styles/tailwind.css",
+                  "with": "apps/public/src/styles/tailwind.prod.css"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "postServe": {
+          "executor": "@nrwl/web:dev-server",
+          "options": { "buildTarget": "public:postBuild", "port": 5600 },
+          "configurations": {
+            "production": { "buildTarget": "public:postBuild:production" }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": [],
+          "options": {
+            "commands": [
+              "npm run tailwind:public:dev",
+              "npx nx run public:postServe"
+            ],
+            "parallel": false
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/public/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/public"],
+          "options": {
+            "jestConfig": "apps/public/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "public-e2e": {
+      "root": "apps/public-e2e",
+      "sourceRoot": "apps/public-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/public-e2e/cypress.json",
+            "tsConfig": "apps/public-e2e/tsconfig.e2e.json",
+            "devServerTarget": "public:serve"
+          },
+          "configurations": {
+            "production": { "devServerTarget": "public:serve:production" }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["apps/public-e2e/**/*.{js,ts}"] }
+        }
+      }
+    },
+    "core": {
+      "root": "libs/core",
+      "sourceRoot": "libs/core/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["libs/core/**/*.{ts,tsx,js,jsx}"] }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core"],
+          "options": {
+            "jestConfig": "libs/core/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "admin": {
+      "root": "apps/admin",
+      "sourceRoot": "apps/admin/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": [],
+          "options": {
+            "commands": [
+              "npm run tailwind:admin:prod",
+              "npx nx run admin:postBuild --configuration=production"
+            ],
+            "parallel": false,
+            "maxWorkers": 2,
+            "memoryLimit": 512
+          }
+        },
+        "postBuild": {
+          "executor": "@nrwl/web:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "fileReplacements": [
+              {
+                "replace": "apps/admin/src/styles/tailwind.css",
+                "with": "apps/admin/src/styles/tailwind.dev.css"
+              }
+            ],
+            "outputPath": "dist/apps/admin",
+            "index": "apps/admin/src/index.html",
+            "main": "apps/admin/src/main.tsx",
+            "polyfills": "apps/admin/src/polyfills.ts",
+            "tsConfig": "apps/admin/tsconfig.app.json",
+            "assets": ["apps/admin/src/favicon.ico", "apps/admin/src/assets"],
+            "styles": ["apps/admin/src/styles.scss", "styles/global.scss"],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/webpack"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/admin/src/environments/environment.ts",
+                  "with": "apps/admin/src/environments/environment.prod.ts"
+                },
+                {
+                  "replace": "apps/admin/src/styles/tailwind.css",
+                  "with": "apps/admin/src/styles/tailwind.prod.css"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "postServe": {
+          "executor": "@nrwl/web:dev-server",
+          "options": { "buildTarget": "admin:postBuild", "port": 5610 },
+          "configurations": {
+            "production": { "buildTarget": "admin:postBuild:production" }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": [],
+          "options": {
+            "commands": [
+              "npm run tailwind:admin:dev",
+              "npx nx run admin:postServe"
+            ],
+            "parallel": false
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["apps/admin/**/*.{ts,tsx,js,jsx}"] }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/admin"],
+          "options": {
+            "jestConfig": "apps/admin/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "admin-e2e": {
+      "root": "apps/admin-e2e",
+      "sourceRoot": "apps/admin-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/admin-e2e/cypress.json",
+            "tsConfig": "apps/admin-e2e/tsconfig.e2e.json",
+            "devServerTarget": "admin:serve"
+          },
+          "configurations": {
+            "production": { "devServerTarget": "admin:serve:production" }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["apps/admin-e2e/**/*.{js,ts}"] }
+        }
+      }
+    },
+    "shared-auth": {
+      "root": "libs/shared/auth",
+      "sourceRoot": "libs/shared/auth/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared/auth/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/auth"],
+          "options": {
+            "jestConfig": "libs/shared/auth/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "hotel": {
+      "root": "apps/hotel",
+      "sourceRoot": "apps/hotel/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": [],
+          "options": {
+            "commands": [
+              "npm run tailwind:hotel:prod",
+              "npx nx run hotel:postBuild --configuration=production"
+            ],
+            "parallel": false,
+            "maxWorkers": 2,
+            "memoryLimit": 512
+          }
+        },
+        "postBuild": {
+          "executor": "@nrwl/web:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "fileReplacements": [
+              {
+                "replace": "apps/hotel/src/styles/tailwind.css",
+                "with": "apps/hotel/src/styles/tailwind.dev.css"
+              }
+            ],
+            "outputPath": "dist/apps/hotel",
+            "index": "apps/hotel/src/index.html",
+            "main": "apps/hotel/src/main.tsx",
+            "polyfills": "apps/hotel/src/polyfills.ts",
+            "tsConfig": "apps/hotel/tsconfig.app.json",
+            "assets": ["apps/hotel/src/favicon.ico", "apps/hotel/src/assets"],
+            "styles": ["apps/hotel/src/styles.scss", "styles/global.scss"],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/webpack"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/hotel/src/environments/environment.ts",
+                  "with": "apps/hotel/src/environments/environment.prod.ts"
+                },
+                {
+                  "replace": "apps/hotel/src/styles/tailwind.css",
+                  "with": "apps/hotel/src/styles/tailwind.prod.css"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "postServe": {
+          "executor": "@nrwl/web:dev-server",
+          "options": { "buildTarget": "hotel:postBuild", "port": 5620 },
+          "configurations": {
+            "production": { "buildTarget": "hotel:postBuild:production" }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": [],
+          "options": {
+            "commands": [
+              "npm run tailwind:hotel:dev",
+              "npx nx run hotel:postServe"
+            ],
+            "parallel": false
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["apps/hotel/**/*.{ts,tsx,js,jsx}"] }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/hotel"],
+          "options": {
+            "jestConfig": "apps/hotel/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "hotel-e2e": {
+      "root": "apps/hotel-e2e",
+      "sourceRoot": "apps/hotel-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/hotel-e2e/cypress.json",
+            "tsConfig": "apps/hotel-e2e/tsconfig.e2e.json",
+            "devServerTarget": "hotel:serve"
+          },
+          "configurations": {
+            "production": { "devServerTarget": "hotel:serve:production" }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["apps/hotel-e2e/**/*.{js,ts}"] }
+        }
+      }
+    },
+    "shared-components": {
+      "root": "libs/shared/components",
+      "sourceRoot": "libs/shared/components/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared/components/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/components"],
+          "options": {
+            "jestConfig": "libs/shared/components/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  }
+}

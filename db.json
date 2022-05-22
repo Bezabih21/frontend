@@ -1,0 +1,668 @@
+{
+    "hotels": [
+        {
+            "id": 1,
+            "hotelName": "Sky Light Hotel",
+            "rooms": {
+                "counts": 5,
+                "rooms": [
+                    {
+                        "id": 1,
+                        "name": "Room one",
+                        "description": "room one description"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Room two",
+                        "description": "room two description"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Room three",
+                        "description": "room three description"
+                    },
+                    {
+                        "id": 4,
+                        "name": "Room four",
+                        "description": "room four description"
+                    },
+                    {
+                        "id": 5,
+                        "name": "Room five",
+                        "description": "room five description"
+                    }
+                ]
+            },
+            "facilitiesAndServices": {
+                "parking": {
+                    "parking": "true",
+                    "reserve": "No reservation needed",
+                    "parkingType": "private",
+                    "Location": "on Site",
+                    "price": 12,
+                    "per": "day"
+                },
+                "breakfast": {
+                    "breakfast": "true",
+                    "price": 450,
+                    "per": "person",
+                    "kindOfBreakfastAvailable": [
+                        {
+                            "id": 1,
+                            "name": "Buffet",
+                            "description": "some text"
+                        },
+                        {
+                            "id": 2,
+                            "name": "Ethiopian",
+                            "description": "some text"
+                        },
+                        {
+                            "id": 3,
+                            "name": "American",
+                            "description": "some text"
+                        }
+                    ]
+                },
+                "language": [
+                    {
+                        "id": 1,
+                        "name": "English"
+                    }
+                ],
+                "extraBed": "true",
+                "facilities": [
+                    {
+                        "id": "",
+                        "name": "Facility"
+                    }
+                ]
+            },
+            "amenities": [
+                {
+                    "id": 1,
+                    "name": "Air conditioning"
+                }
+            ],
+            "photos": [
+                {
+                    "id": 1,
+                    "url": "../../../../../assets/photos/5.jpg",
+                    "tags": [
+                        {
+                            "id": 1,
+                            "name": "Restaurant"
+                        },
+                        {
+                            "id": 2,
+                            "name": "Breakfast"
+                        },
+                        {
+                            "id": 3,
+                            "name": "Room Service"
+                        }
+                    ],
+                    "associatedRoom": [
+                        {
+                            "id": 1,
+                            "name": "Room one",
+                            "description": "room one description"
+                        }
+                    ]
+                },
+                {
+                    "id": 1,
+                    "url": "../../../../../assets/photos/6.jpg",
+                    "tags": [
+                        {
+                            "id": 1,
+                            "name": "Restaurant"
+                        },
+                        {
+                            "id": 2,
+                            "name": "Wedding Hall"
+                        }
+                    ],
+                    "associatedRoom": [
+                        {
+                            "id": 1,
+                            "name": "Room one",
+                            "description": "room one description"
+                        }
+                    ]
+                }
+            ],
+            "email": "skyLight007@gmail.com",
+            "phoneNumber": "+251978654312",
+            "Address": "Bole, front of Bole international airport",
+            "addressLineOne": "Bole, front of Bole international airport",
+            "addressLineTwo": "",
+            "Status": "Active",
+            "country": "Ethiopia",
+            "addressTwo": "",
+            "city": "Addis Abeba",
+            "starRating": 5,
+            "contactFirstName": "Contact First",
+            "contactLastName": "Contact Last",
+            "contactPhone": "+25138771226",
+            "contactEmail": "contact@gmail.com"
+        },
+        {
+            "id": 2,
+            "hotelName": "Harmony Hotel",
+            "rooms": {
+                "counts": 0,
+                "rooms": []
+            },
+            "facilitiesAndServices": {
+                "parking": {
+                    "parking": "true",
+                    "reserve": "No reservation needed",
+                    "parkingType": "private",
+                    "Location": "on Site",
+                    "price": 12,
+                    "per": "day"
+                },
+                "breakfast": {
+                    "breakfast": "true",
+                    "price": 450,
+                    "per": "person",
+                    "kindOfBreakfastAvailable": [
+                        {
+                            "id": 1,
+                            "name": "American",
+                            "description": "some text"
+                        }
+                    ]
+                },
+                "language": [
+                    {
+                        "id": 1,
+                        "name": "English"
+                    }
+                ],
+                "extraBed": "true",
+                "facilities": [
+                    {
+                        "id": "",
+                        "name": "Facility"
+                    }
+                ]
+            },
+            "amenities": [
+                {
+                    "id": 1,
+                    "name": "Air conditioning"
+                }
+            ],
+            "photos": [
+                {
+                    "id": 1,
+                    "url": "../../../../../assets/photos/4.jpg",
+                    "tags": [
+                        {
+                            "id": 1,
+                            "name": "Rooms"
+                        }
+                    ],
+                    "associatedRoom": [
+                        {
+                            "id": 1,
+                            "name": "Room one",
+                            "description": "room one description"
+                        }
+                    ]
+                }
+            ],
+            "email": "harmony@gmail.com",
+            "phoneNumber": "+25112345678",
+            "Address": "Bole district in Addis Ababa",
+            "Status": "Pending",
+            "addressLineOne": "Bole district in Addis Ababa",
+            "addressLineTwo": "",
+            "country": "Ethiopia",
+            "addressTwo": "",
+            "city": "Addis Abeba",
+            "starRating": 4,
+            "contactFirstName": "Contact First",
+            "contactLastName": "Contact Last",
+            "contactPhone": "+25112365478",
+            "contactEmail": "contact@harmony.com"
+        },
+        {
+            "id": 3,
+            "hotelName": "Kaleb Hotel",
+            "rooms": {
+                "counts": 2,
+                "rooms": [
+                    {
+                        "name": "Room one",
+                        "description": "room one description"
+                    },
+                    {
+                        "name": "Room two",
+                        "description": "room two description"
+                    }
+                ]
+            },
+            "facilitiesAndServices": {
+                "parking": {
+                    "parking": "true",
+                    "reserve": "No reservation needed",
+                    "parkingType": "private",
+                    "Location": "on Site",
+                    "price": 12,
+                    "per": "day"
+                },
+                "breakfast": {
+                    "breakfast": "true",
+                    "price": 450,
+                    "per": "person",
+                    "kindOfBreakfastAvailable": [
+                        {
+                            "id": 1,
+                            "name": "American",
+                            "description": "some text"
+                        }
+                    ]
+                },
+                "language": [
+                    {
+                        "id": 1,
+                        "name": "English"
+                    }
+                ],
+                "extraBed": "true",
+                "facilities": [
+                    {
+                        "id": 1,
+                        "name": "Free WiFi",
+                        "checked": true
+                    },
+                    {
+                        "id": 2,
+                        "name": "Non-smoking rooms",
+                        "checked": true
+                    },
+                    {
+                        "id": 3,
+                        "name": "Restaurant",
+                        "checked": true
+                    },
+                    {
+                        "id": 4,
+                        "name": "Airport shuttles",
+                        "checked": false
+                    },
+                    {
+                        "id": 5,
+                        "name": "Room service",
+                        "checked": true
+                    },
+                    {
+                        "id": 6,
+                        "name": "Family rooms",
+                        "checked": true
+                    },
+                    {
+                        "id": 7,
+                        "name": "Bar",
+                        "checked": true
+                    },
+                    {
+                        "id": 8,
+                        "name": "Spa",
+                        "checked": true
+                    },
+                    {
+                        "id": 9,
+                        "name": "24-hour front desk",
+                        "checked": true
+                    },
+                    {
+                        "id": 10,
+                        "name": "Hot tub / Jacuzzi",
+                        "checked": true
+                    },
+                    {
+                        "id": 11,
+                        "name": "Sauna",
+                        "checked": true
+                    },
+                    {
+                        "id": 12,
+                        "name": "Air conditioning",
+                        "checked": true
+                    },
+                    {
+                        "id": 13,
+                        "name": "Fitness center",
+                        "checked": true
+                    },
+                    {
+                        "id": 14,
+                        "name": "Water park",
+                        "checked": false
+                    },
+                    {
+                        "id": 15,
+                        "name": "Garden",
+                        "checked": true
+                    },
+                    {
+                        "id": 16,
+                        "name": "Swimming pool",
+                        "checked": true
+                    },
+                    {
+                        "id": 17,
+                        "name": "Terrace",
+                        "checked": true
+                    }
+                ]
+            },
+            "amenities": [
+                {
+                    "id": 1,
+                    "name": "Air conditioning"
+                }
+            ],
+            "photos": [
+                {
+                    "id": 1,
+                    "url": "../../../../../assets/photos/1.jpg",
+                    "tags": [
+                        {
+                            "id": 1,
+                            "name": "Restaurant"
+                        }
+                    ],
+                    "associatedRoom": [
+                        {
+                            "id": 1,
+                            "name": "Room one",
+                            "description": "room one description"
+                        }
+                    ]
+                },
+                {
+                    "id": 1,
+                    "url": "../../../../../assets/photos/2.jpg",
+                    "tags": [
+                        {
+                            "id": 1,
+                            "name": "Restaurant"
+                        },
+                        {
+                            "id": 2,
+                            "name": "Lunch"
+                        }
+                    ],
+                    "associatedRoom": [
+                        {
+                            "id": 1,
+                            "name": "Room one",
+                            "description": "room one description"
+                        },
+                        {
+                            "id": 2,
+                            "name": "Room two",
+                            "description": "room two description"
+                        }
+                    ]
+                },
+                {
+                    "id": 1,
+                    "url": "../../../../../assets/photos/3.jpg",
+                    "tags": [
+                        {
+                            "id": 2,
+                            "name": "Rooms"
+                        },
+                        {
+                            "id": 2,
+                            "name": "Luxury"
+                        }
+                    ],
+                    "associatedRoom": [
+                        {
+                            "id": 2,
+                            "name": "Room two",
+                            "description": "room two description"
+                        }
+                    ]
+                }
+            ],
+            "email": "kaleb@gmail.com",
+            "phoneNumber": "+25112345678",
+            "Address": "Cameroon Street near Edna mall",
+            "Status": "Pending",
+            "addressLineOne": "Cameroon Street near Edna mall",
+            "addressLineTwo": "",
+            "country": "Ethiopia",
+            "addressTwo": "",
+            "city": "Addis Abeba",
+            "starRating": 5,
+            "contactFirstName": "Contact First",
+            "contactLastName": "Contact Last",
+            "contactPhone": "+25138771226",
+            "contactEmail": "contact@kaleb.hotel.com"
+        }
+    ],
+    "rooms": [
+        {
+            "id": 1,
+            "name": "Room one",
+            "description": "room one description"
+        },
+        {
+            "id": 2,
+            "name": "Room two",
+            "description": "room two description"
+        },
+        {
+            "id": 3,
+            "name": "Room three",
+            "description": "room three description"
+        },
+        {
+            "id": 4,
+            "name": "Room four",
+            "description": "room four description"
+        },
+        {
+            "id": 5,
+            "name": "Room five",
+            "description": "room five description"
+        }
+    ],
+    "facilities": [
+        {
+            "id": 1,
+            "name": "Free WiFi"
+        },
+        {
+            "id": 2,
+            "name": "Non-smoking rooms"
+        },
+        {
+            "id": 3,
+            "name": "Restaurant"
+        },
+        {
+            "id": 4,
+            "name": "Airport shuttles"
+        },
+        {
+            "id": 5,
+            "name": "Room service"
+        },
+        {
+            "id": 6,
+            "name": "Family rooms"
+        },
+        {
+            "id": 7,
+            "name": "Bar"
+        },
+        {
+            "id": 8,
+            "name": "Spa"
+        },
+        {
+            "id": 9,
+            "name": "24-hour front desk"
+        },
+        {
+            "id": 10,
+            "name": "Hot tub / Jacuzzi"
+        },
+        {
+            "id": 11,
+            "name": "Sauna"
+        },
+        {
+            "id": 12,
+            "name": "Air conditioning"
+        },
+        {
+            "id": 13,
+            "name": "Fitness center"
+        },
+        {
+            "id": 14,
+            "name": "Water park"
+        },
+        {
+            "id": 15,
+            "name": "Garden"
+        },
+        {
+            "id": 16,
+            "name": "Swimming pool"
+        },
+        {
+            "id": 17,
+            "name": "Terrace"
+        }
+    ],
+    "amenitiesCategory": [
+        {
+            "id": 1,
+            "name": "Room Amenities"
+        },
+        {
+            "id": 2,
+            "name": "Bathroom"
+        },
+        {
+            "id": 3,
+            "name": "Media & Technology"
+        },
+        {
+            "id": 4,
+            "name": "Food & Drink"
+        },
+        {
+            "id": 5,
+            "name": "Services & Extras"
+        },
+        {
+            "id": 6,
+            "name": "Outdoor & View"
+        },
+        {
+            "id": 7,
+            "name": "Layout"
+        },
+        {
+            "id": 8,
+            "name": "Accessibility"
+        },
+        {
+            "id": 9,
+            "name": "Entertainment & Family Services"
+        },
+        {
+            "id": 10,
+            "name": "Hot Spring"
+        },
+        {
+            "id": 11,
+            "name": "Safety & Security"
+        },
+        {
+            "id": 12,
+            "name": "Safety Features"
+        },
+        {
+            "id": 13,
+            "name": "Physical Distancing"
+        }
+    ],
+    "amenitiesTags": [
+        {
+            "id": 1,
+            "name": "Most Popular"
+        },
+        {
+            "id": 2,
+            "name": "Most Requested"
+        }
+    ],
+    "amenities": [
+        {
+            "id": 1,
+            "name": "Air conditioning",
+            "category": [
+                1
+            ],
+            "tag": [
+                1,
+                2
+            ]
+        }
+    ],
+    "tags": [
+        {
+            "id": 1,
+            "name": "Breakfast"
+        },
+        {
+            "id": 2,
+            "name": "Lunch"
+        },
+        {
+            "id": 3,
+            "name": "Luxury"
+        },
+        {
+            "id": 4,
+            "name": "Rooms"
+        },
+        {
+            "id": 5,
+            "name": "Elegant"
+        },
+        {
+            "id": 6,
+            "name": "Most Popular"
+        },
+        {
+            "id": 7,
+            "name": "Spa"
+        },
+        {
+            "id": 8,
+            "name": "Restaurant"
+        },
+        {
+            "id": 9,
+            "name": "Pool"
+        },
+        {
+            "id": 10,
+            "name": "Hall"
+        }
+    ]
+}

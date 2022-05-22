@@ -1,0 +1,23 @@
+variables:
+  CI_REGISTRY_IMAGE: "docker.elnetech.com/elnet/eltnt/frontend" 
+  DOCKER_TLS_CERTDIR: ""
+docker-build:
+  # Official docker image.
+  image: docker:19.03.12
+  stage: build 
+  services:
+    - docker:19.03.12-dind
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    - docker build --tag $CI_REGISTRY_IMAGE:master-$CI_COMMIT_SHORT_SHA --tag $CI_REGISTRY_IMAGE:master-new .
+    - docker push $CI_REGISTRY_IMAGE:master-new
+    - docker push $CI_REGISTRY_IMAGE:master-$CI_COMMIT_SHORT_SHA
+    - docker build --tag $CI_REGISTRY_IMAGE:public-$CI_COMMIT_SHORT_SHA --tag $CI_REGISTRY_IMAGE:public-latest -f Dockerfile.pub .
+    - docker push $CI_REGISTRY_IMAGE:public-latest
+    - docker push $CI_REGISTRY_IMAGE:public-$CI_COMMIT_SHORT_SHA
+    - docker build --tag $CI_REGISTRY_IMAGE:hotel-$CI_COMMIT_SHORT_SHA --tag $CI_REGISTRY_IMAGE:hotel-latest -f Dockerfile.hot .
+    - docker push $CI_REGISTRY_IMAGE:hotel-latest
+    - docker push $CI_REGISTRY_IMAGE:hotel-$CI_COMMIT_SHORT_SHA
+  only:
+    - master

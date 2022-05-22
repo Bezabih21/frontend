@@ -1,0 +1,32 @@
+:root {
+  --primary-color-50: #e3ebee;
+  --primary-color-100: #b9cdd4;
+  --primary-color-200: #8bacb7;
+  --primary-color-300: #5c8a9a;
+  --primary-color-400: #397185;
+  --primary-color-500: #16586f;
+  --primary-color-600: #135067;
+  --primary-color-700: #10475c;
+  --primary-color-800: #0c3d52;
+  --primary-color-900: #062d40;
+  --main-text-black: #292f32;
+}
+
+body {
+  background: #e9eff8;
+  color: var(--main-text-black);
+}
+
+body *::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  transition: 0.3s background;
+}
+
+body *::-webkit-scrollbar-thumb {
+  background: #ced4da;
+}
+
+body *:hover::-webkit-scrollbar-thumb {
+  background: adb5bd;
+}

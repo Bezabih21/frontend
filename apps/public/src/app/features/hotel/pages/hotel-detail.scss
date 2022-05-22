@@ -1,0 +1,109 @@
+.hotel-detail-tab .ant-tabs-card.ant-tabs-top > .ant-tabs-nav .ant-tabs-tab {
+  border-radius: 0px 0px 0 0;
+}
+.hotel-detail-tab .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab {
+  border: 0px;
+}
+.hotel-detail-tab .ant-tabs-card .ant-tabs-nav-wrap {
+  background-color: var(--primary-color-500);
+}
+.hotel-detail-tab
+  .ant-tabs-card.ant-tabs-top
+  > .ant-tabs-nav
+  .ant-tabs-tab
+  + .ant-tabs-tab {
+  margin: 0px;
+}
+
+.hotel-detail-tab .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: var(--primary-color-500);
+  div {
+    display: block;
+    background-color: var(--primary-color-500);
+  }
+}
+
+.hotel-detail-tab .ant-tabs-tab.ant-tabs-tab-active {
+  background: #f3f4f6 !important;
+}
+.hotel-detail-tab .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab {
+  color: white;
+  background-color: var(--primary-color-500);
+}
+
+.hotel-detail-tab .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab {
+  padding-bottom: 0px;
+}
+
+.hotel-detail-tab .ant-tabs-top > .ant-tabs-nav::before {
+  border: 0px;
+}
+.hotel-detail-tab .ant-tabs-extra-content {
+  background-color: var(--primary-color-500);
+  border-top-right-radius: 0.5rem;
+}
+
+//hotel recommendation css
+.hotel-recommend-tab .ant-tabs-card.ant-tabs-top > .ant-tabs-nav .ant-tabs-tab {
+  border-radius: 0px 0px 0 0;
+}
+.hotel-recommend-tab .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab {
+  border: 0px;
+  //padding: 0.625rem;
+}
+.hotel-recommend-tab .ant-tabs-card .ant-tabs-nav-wrap {
+  background-color: var(--primary-color-500);
+  // padding: 0.625rem;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+.hotel-recommend-tab .ant-tabs-tab-btn {
+  padding: 0.875rem;
+}
+.hotel-recommend-tab
+  .ant-tabs-card.ant-tabs-top
+  > .ant-tabs-nav
+  .ant-tabs-tab
+  + .ant-tabs-tab {
+  margin: 0px;
+}
+
+.hotel-recommend-tab .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: var(--primary-color-500);
+  div {
+    display: block;
+    background-color: var(--primary-color-500);
+  }
+}
+
+.hotel-recommend-tab .ant-tabs-tab.ant-tabs-tab-active {
+  background: #f3f4f6 !important;
+}
+.hotel-recommend-tab .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab {
+  color: white;
+  background-color: var(--primary-color-500);
+}
+
+.hotel-recommend-tab .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab {
+  padding-bottom: 0px;
+}
+
+.hotel-recommend-tab .ant-tabs-top > .ant-tabs-nav::before {
+  border: 0px;
+}
+.hotel-recommend-tab .ant-tabs-extra-content {
+  background-color: var(--primary-color-500);
+  border-top-right-radius: 0.5rem;
+}
+
+//hotel gallery css
+.hotel-gallery .ant-carousel .slick-prev {
+  &::before {
+    content: '';
+  }
+}
+.hotel-gallery .ant-carousel .slick-next {
+  &::before {
+    content: '';
+  }
+}

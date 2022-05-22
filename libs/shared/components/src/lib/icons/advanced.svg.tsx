@@ -1,0 +1,20 @@
+import React from 'react';
+
+function AdvancedSVG() {
+  return (
+    <svg
+      width="18"
+      height="16"
+      viewBox="0 0 18 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4.83342 15.5H3.16675V13.8333H0.666748V12.1667H3.16675V10.5H4.83342V15.5ZM17.3334 13.8333H6.50008V12.1667H17.3334V13.8333ZM13.1667 10.5H11.5001V8.83333H0.666748V7.16667H11.5001V5.51H13.1667V10.5ZM17.3334 8.83333H14.8334V7.16667H17.3334V8.83333ZM8.16675 5.5H6.50008V3.83333H0.666748V2.16667H6.50008V0.5H8.16675V5.5ZM17.3334 3.83333H9.83342V2.16667H17.3334V3.83333Z"
+        fill="white"
+      />
+    </svg>
+  );
+}
+
+export default AdvancedSVG;

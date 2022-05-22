@@ -1,0 +1,25 @@
+FROM node:14 AS blog-nx-base
+
+WORKDIR /app
+
+COPY package*.json ./
+
+COPY nx.json ./
+
+RUN npm install
+
+COPY . .
+
+RUN npm install -g @nrwl/cli
+
+RUN nx build hotel
+
+FROM nginx:alpine AS blog-nx-ui
+
+WORKDIR /usr/share/nginx/html
+
+COPY --from=blog-nx-base /app/dist/apps/hotel .
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]

@@ -1,0 +1,20 @@
+@media only screen and (min-width: 1536px) {
+  .order-card-cover {
+    background-size: cover;
+    height: 140px;
+  }
+  .card-cover {
+    background-size: cover;
+  }
+}
+@media only screen and (max-width: 1524px) {
+  .order-card-cover {
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 90px;
+  }
+  .card-cover {
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}

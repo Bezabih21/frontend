@@ -1,0 +1,29 @@
+FROM node:14 AS blog-nx-base
+
+WORKDIR /app
+
+COPY package*.json ./
+
+COPY nx.json ./
+
+RUN npm install
+
+COPY . .
+
+RUN npm install -g @nrwl/cli
+
+RUN nx build public
+
+FROM nginx:alpine AS blog-nx-ui
+
+WORKDIR /usr/share/nginx/html
+
+COPY --from=blog-nx-base /app/dist/apps/public .
+
+COPY ./default.conf /etc/nginx/conf.d/default.conf
+
+CMD ["nginx", "-g", "daemon off;"]
+
+EXPOSE 80
+
+

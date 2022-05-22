@@ -1,0 +1,42 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["sonarjs", "@nrwl/nx"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "extends": [
+        "plugin:sonarjs/recommended",
+        "prettier",
+        "prettier/@typescript-eslint"
+      ],
+      "rules": {
+        "@nrwl/nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:sonarjs/recommended", "plugin:@nrwl/nx/typescript"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:sonarjs/recommended", "plugin:@nrwl/nx/javascript"],
+      "rules": {}
+    }
+  ]
+}

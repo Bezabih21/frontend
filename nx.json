@@ -1,0 +1,29 @@
+{
+  "implicitDependencies": {
+    "workspace.json": "*",
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
+    "tsconfig.base.json": "*",
+    "tslint.json": "*",
+    ".eslintrc.json": "*",
+    "nx.json": "*"
+  },
+  "affected": { "defaultBase": "master" },
+  "npmScope": "eltnt",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
+    }
+  },
+  "projects": {
+    "public": { "tags": [] },
+    "public-e2e": { "tags": [], "implicitDependencies": ["public"] },
+    "core": { "tags": [] },
+    "admin": { "tags": [] },
+    "admin-e2e": { "tags": [], "implicitDependencies": ["admin"] },
+    "shared-auth": { "tags": [] },
+    "hotel": { "tags": [] },
+    "hotel-e2e": { "tags": [], "implicitDependencies": ["hotel"] },
+    "shared-components": { "tags": [] }
+  }
+}

@@ -1,0 +1,39 @@
+.overlay-container {
+  display: grid;
+}
+
+.overlay {
+  grid-area: 1 / 1;
+}
+
+.login-1-bg {
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.left-grad {
+  background: linear-gradient(
+    0.72deg,
+    #f29dba 0.62%,
+    rgba(255, 255, 255, 0) 80.41%
+  );
+}
+
+.caption-lg {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 39px;
+  color: #fff;
+}
+
+.caption-sm {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 29px;
+  color: #fff;
+}
